@@ -7,6 +7,8 @@ import matplotlib.pyplot as plt
 
 data = pd.read_csv("healthcare-dataset-stroke-data.csv")
 
+print(data.head())
+
 X = data.drop(columns=['id', 'stroke', 'hypertension', 'heart_disease', 'ever_married', 'work_type', 'Residence_type', 'avg_glucose_level', 'bmi'])
 y = data['stroke']
 gender_dict = {'Male': 0, 'Female': 1, 'Other': 2}
@@ -27,7 +29,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3,random_s
 clf = svm.SVC(kernel='linear') # Linear Kernel
 
 #Train the model using the training sets
-clf.fit(X_train, y_train)
+clf.fit(X_train, y_train)    #ERROR LINE. WHY?
 
 #Predict the response for test dataset
 y_pred = clf.predict(X_test)
