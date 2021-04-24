@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 data = pd.read_csv("healthcare-dataset-stroke-data.csv")
 
-print(data.head())
+# print(data.head())
 
 X = data.drop(columns=['id', 'stroke', 'hypertension', 'heart_disease', 'ever_married', 'work_type', 'Residence_type', 'avg_glucose_level', 'bmi'])
 y = data['stroke']
@@ -22,7 +22,10 @@ data['work_type'] = data['work_type'].map(work_type_dict)
 data['Residence_type'] = data['Residence_type'].map(residence_type_dict)
 data['smoking_status'] = data['smoking_status'].map(smoking_status_dict)
 
+X = data.drop(columns=['id', 'stroke', 'hypertension', 'heart_disease', 'ever_married', 'work_type', 'Residence_type', 'avg_glucose_level', 'bmi', 'smoking_status'])
+y = data['stroke']
 
+print(X)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3,random_state=109) # 70% training and 30% test
 
 #Create a svm Classifier
