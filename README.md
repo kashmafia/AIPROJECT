@@ -5,3 +5,5 @@ This project aims to predict chances of a stroke for a patient based on thier he
 **fullstroke.py** predicts strokes based on all patient data. 
 
 **hello.py** predicts strokes using just the age and gender data.
+
+**AIComparison.ipynb** predicts strokes using three different algorithms and then compares the algorithms.
